@@ -6,10 +6,24 @@ import 'package:lux_travel_poc/model/offer.dart';
 final List<Offer> _mockOffers = [
   Offer(
     imageUri: 'assets/images/alexander-kaunas-unsplash.jpg',
-    location: 'Khao Lak, Thailand',
-    title: 'Khao Lak Five-Star with Daily Dining & Nightly Cocktails',
-    accommodationName: 'Khao Lak Villas',
+    location: 'Koh Phangan, Thailand',
+    title: 'Koh Phangan Five-Star with Daily Dining & Nightly Cocktails',
+    accommodationName: 'Koh Phangan Villas',
     priceDetail: 'THB 4,290',
+  ),
+  Offer(
+    imageUri: 'assets/images/edvin-johansson-unsplash.jpg',
+    location: 'Tropical Paradise',
+    title: 'Five-Star with Daily Dining & Nightly Cocktails',
+    accommodationName: 'Paradise Island',
+    priceDetail: 'THB 5,290',
+  ),
+  Offer(
+    imageUri: 'assets/images/hello-lightbulb-unsplash.jpg',
+    location: 'Oia, Greece',
+    title: 'Five-Star with Daily Dining & Nightly Cocktails',
+    accommodationName: 'Oia Villas',
+    priceDetail: 'THB 7,290',
   ),
 ];
 
