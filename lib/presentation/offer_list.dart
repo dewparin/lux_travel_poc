@@ -17,6 +17,10 @@ class _State extends State<OfferList> {
     });
   }
 
+  void _toggleFavorite(int offerUid) {
+    Provider.of<OfferModel>(context, listen: false).toggleFavorite(offerUid);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Consumer<OfferModel>(
@@ -36,7 +40,10 @@ class _State extends State<OfferList> {
     final offers = model.allOffers;
     return ListView.builder(
       itemCount: offers.length,
-      itemBuilder: (context, index) => OfferItem(offer: offers[index]),
+      itemBuilder: (context, index) => OfferItem(
+        offer: offers[index],
+        onTappedFavorite: _toggleFavorite,
+      ),
     );
   }
 }

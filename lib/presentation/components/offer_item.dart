@@ -4,8 +4,13 @@ import 'package:lux_travel_poc/presentation/constant.dart';
 
 class OfferItem extends StatelessWidget {
   final Offer offer;
+  final ValueChanged<int> onTappedFavorite;
 
-  const OfferItem({Key? key, required this.offer}) : super(key: key);
+  const OfferItem({
+    Key? key,
+    required this.offer,
+    required this.onTappedFavorite,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -76,6 +81,14 @@ class OfferItem extends StatelessWidget {
           ),
           alignment: Alignment(-1.3, 0),
         ),
-        trailing: Icon(Icons.favorite_outline),
+        trailing: IconButton(
+          icon: offer.isFavorite
+              ? const Icon(Icons.favorite)
+              : const Icon(Icons.favorite_border),
+          color: offer.isFavorite ? Colors.red[500] : null,
+          onPressed: () {
+            onTappedFavorite(offer.uid);
+          },
+        ),
       );
 }
