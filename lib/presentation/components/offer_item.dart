@@ -21,7 +21,12 @@ class OfferItem extends StatelessWidget {
                 fit: BoxFit.cover,
               )),
           Container(
-            padding: EdgeInsets.all(defaultPadding),
+            padding: EdgeInsets.fromLTRB(
+              defaultPadding,
+              smallPadding,
+              defaultPadding,
+              defaultPadding,
+            ),
             child: _buildItemDetail(context, offer),
           ),
         ],
