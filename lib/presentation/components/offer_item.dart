@@ -37,7 +37,7 @@ class OfferItem extends StatelessWidget {
   Column _buildItemDetail(BuildContext context, Offer offer) => Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          _buildItemListTile(offer),
+          _buildItemListTile(context, offer),
           Text(
             offer.title,
             maxLines: 2,
@@ -49,25 +49,31 @@ class OfferItem extends StatelessWidget {
           ),
           Text(
             offer.accommodationName,
-            style: Theme.of(context).textTheme.bodyText1,
+            style: Theme.of(context).textTheme.bodyText2,
           ),
           SizedBox(
             height: mediumPadding,
           ),
           Text(
             offer.priceDetail,
-            style: Theme.of(context).textTheme.bodyText2,
+            style: Theme.of(context).textTheme.bodyText2!.copyWith(
+                  fontSize: 16.0,
+                  fontWeight: FontWeight.bold,
+                ),
           ),
         ],
       );
 
-  ListTile _buildItemListTile(Offer offer) => ListTile(
+  ListTile _buildItemListTile(BuildContext context, Offer offer) => ListTile(
         dense: true,
         contentPadding: EdgeInsets.zero,
         leading: Icon(Icons.location_pin),
         // title: Text(offer.location),
         title: Align(
-          child: new Text(offer.location),
+          child: new Text(
+            offer.location,
+            style: Theme.of(context).textTheme.bodyText2,
+          ),
           alignment: Alignment(-1.3, 0),
         ),
         trailing: Icon(Icons.favorite_outline),
