@@ -37,6 +37,9 @@ class OfferList extends StatelessWidget {
           onTappedFavorite: (offerUid) {
             _toggleFavorite(context, offerUid);
           },
+          onTappedOffer: (offerUid) {
+            Navigator.pushNamed(context, '/detail');
+          },
         ),
       );
 

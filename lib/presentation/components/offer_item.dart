@@ -5,36 +5,43 @@ import 'package:lux_travel_poc/presentation/constant.dart';
 class OfferItem extends StatelessWidget {
   final Offer offer;
   final ValueChanged<int> onTappedFavorite;
+  final ValueChanged<int> onTappedOffer;
 
   const OfferItem({
     Key? key,
     required this.offer,
     required this.onTappedFavorite,
+    required this.onTappedOffer,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      margin: EdgeInsets.only(bottom: defaultPadding),
-      child: Column(
-        children: [
-          SizedBox(
-              height: 250,
-              width: double.infinity,
-              child: Image(
-                image: AssetImage(offer.imageUri),
-                fit: BoxFit.cover,
-              )),
-          Container(
-            padding: EdgeInsets.fromLTRB(
-              defaultPadding,
-              smallPadding,
-              defaultPadding,
-              defaultPadding,
+    return GestureDetector(
+      onTap: () {
+        onTappedOffer(offer.uid);
+      },
+      child: Card(
+        margin: EdgeInsets.only(bottom: defaultPadding),
+        child: Column(
+          children: [
+            SizedBox(
+                height: 250,
+                width: double.infinity,
+                child: Image(
+                  image: AssetImage(offer.imageUri),
+                  fit: BoxFit.cover,
+                )),
+            Container(
+              padding: EdgeInsets.fromLTRB(
+                defaultPadding,
+                smallPadding,
+                defaultPadding,
+                defaultPadding,
+              ),
+              child: _buildItemDetail(context, offer),
             ),
-            child: _buildItemDetail(context, offer),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
