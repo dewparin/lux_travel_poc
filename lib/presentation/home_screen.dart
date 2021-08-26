@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:lux_travel_poc/presentation/my_places.dart';
 import 'package:lux_travel_poc/presentation/offer_list.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -11,7 +10,9 @@ class _State extends State<HomeScreen> {
   int _selectedIndex = 0;
   final List<Widget> _widgetOptions = <Widget>[
     OfferList(),
-    MyPlaces(),
+    OfferList(
+      onlyFavorites: true,
+    ),
   ];
 
   static const List<BottomNavigationBarItem> _bottomNavItems = [
@@ -37,8 +38,9 @@ class _State extends State<HomeScreen> {
       appBar: AppBar(
         title: Text('Lux'),
       ),
-      body: Center(
-        child: _widgetOptions.elementAt(_selectedIndex),
+      body: IndexedStack(
+        children: _widgetOptions,
+        index: _selectedIndex,
       ),
       bottomNavigationBar: BottomNavigationBar(
         items: _bottomNavItems,

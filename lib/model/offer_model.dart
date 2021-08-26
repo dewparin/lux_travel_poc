@@ -61,25 +61,9 @@ final List<Offer> _mockOffers = [
 ];
 
 class OfferModel extends ChangeNotifier {
-  bool _isFetching = false;
-
-  bool get isFetching => _isFetching;
-
-  final List<Offer> _offers = [];
+  final List<Offer> _offers = _mockOffers;
 
   UnmodifiableListView<Offer> get allOffers => UnmodifiableListView(_offers);
-
-  // mimic reload all offers flow
-  void fetchAllOffers() {
-    _offers.clear();
-    _isFetching = true;
-    notifyListeners();
-    Future.delayed(Duration(seconds: 3), () {
-      _offers.addAll(_mockOffers);
-      _isFetching = false;
-      notifyListeners();
-    });
-  }
 
   void toggleFavorite(int uid) {
     final index = _offers.indexWhere((elem) => elem.uid == uid);
