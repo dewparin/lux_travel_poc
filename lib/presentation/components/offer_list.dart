@@ -33,18 +33,21 @@ class OfferList extends StatelessWidget {
 
   ListView _buildListView(List<Offer> offers) => ListView.builder(
         itemCount: offers.length,
-        itemBuilder: (context, index) => OfferItem(
-          offer: offers[index],
-          onTappedFavorite: (offerUid) {
-            _toggleFavorite(context, offerUid);
-          },
-          onTappedOffer: (offerUid) {
-            Navigator.pushNamed(
-              context,
-              '/detail',
-              arguments: OfferDetailScreenArguments(offerUid),
-            );
-          },
+        itemBuilder: (context, index) => Card(
+          margin: EdgeInsets.only(bottom: defaultPadding),
+          child: OfferItem(
+            offer: offers[index],
+            onTappedFavorite: (offerUid) {
+              _toggleFavorite(context, offerUid);
+            },
+            onTappedOffer: (offerUid) {
+              Navigator.pushNamed(
+                context,
+                '/detail',
+                arguments: OfferDetailScreenArguments(offerUid),
+              );
+            },
+          ),
         ),
       );
 

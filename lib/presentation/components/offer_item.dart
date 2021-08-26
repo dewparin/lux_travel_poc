@@ -20,28 +20,25 @@ class OfferItem extends StatelessWidget {
       onTap: () {
         onTappedOffer(offer.uid);
       },
-      child: Card(
-        margin: EdgeInsets.only(bottom: defaultPadding),
-        child: Column(
-          children: [
-            SizedBox(
-                height: 250,
-                width: double.infinity,
-                child: Image(
-                  image: AssetImage(offer.imageUri),
-                  fit: BoxFit.cover,
-                )),
-            Container(
-              padding: EdgeInsets.fromLTRB(
-                defaultPadding,
-                smallPadding,
-                defaultPadding,
-                defaultPadding,
-              ),
-              child: _buildItemDetail(context, offer),
+      child: Column(
+        children: [
+          SizedBox(
+              height: 250,
+              width: double.infinity,
+              child: Image(
+                image: AssetImage(offer.imageUri),
+                fit: BoxFit.cover,
+              )),
+          Container(
+            padding: EdgeInsets.fromLTRB(
+              defaultPadding,
+              smallPadding,
+              defaultPadding,
+              defaultPadding,
             ),
-          ],
-        ),
+            child: _buildItemDetail(context, offer),
+          ),
+        ],
       ),
     );
   }
