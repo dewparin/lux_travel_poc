@@ -3,6 +3,7 @@ import 'package:lux_travel_poc/model/offer.dart';
 import 'package:lux_travel_poc/model/offer_model.dart';
 import 'package:lux_travel_poc/presentation/components/offer_item.dart';
 import 'package:lux_travel_poc/presentation/constant.dart';
+import 'package:lux_travel_poc/presentation/screens/screen_arguments.dart';
 import 'package:provider/provider.dart';
 
 class OfferList extends StatelessWidget {
@@ -38,7 +39,11 @@ class OfferList extends StatelessWidget {
             _toggleFavorite(context, offerUid);
           },
           onTappedOffer: (offerUid) {
-            Navigator.pushNamed(context, '/detail');
+            Navigator.pushNamed(
+              context,
+              '/detail',
+              arguments: OfferDetailScreenArguments(offerUid),
+            );
           },
         ),
       );
