@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:lux_travel_poc/presentation/home_screen.dart';
+import 'package:lux_travel_poc/presentation/screens/home_screen.dart';
 
 class LuxTravelApp extends StatelessWidget {
   @override
