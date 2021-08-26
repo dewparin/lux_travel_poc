@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:lux_travel_poc/presentation/offer_list.dart';
+import 'package:lux_travel_poc/presentation/components/offer_list.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
