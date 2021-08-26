@@ -42,7 +42,7 @@ class OfferItem extends StatelessWidget {
   Column _buildItemDetail(BuildContext context, Offer offer) => Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          _buildItemListTile(context, offer),
+          _buildLocationAndFavoriteListTile(context, offer),
           Text(
             offer.title,
             maxLines: 2,
@@ -69,11 +69,12 @@ class OfferItem extends StatelessWidget {
         ],
       );
 
-  ListTile _buildItemListTile(BuildContext context, Offer offer) => ListTile(
+  ListTile _buildLocationAndFavoriteListTile(
+          BuildContext context, Offer offer) =>
+      ListTile(
         dense: true,
         contentPadding: EdgeInsets.zero,
         leading: Icon(Icons.location_pin),
-        // title: Text(offer.location),
         title: Align(
           child: new Text(
             offer.location,
