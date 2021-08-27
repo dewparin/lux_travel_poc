@@ -71,7 +71,11 @@ class OfferDetailScreen extends StatelessWidget {
                   offerUid: offer.uid,
                 ),
                 Container(
-                    padding: EdgeInsets.symmetric(horizontal: defaultPadding),
+                    padding: EdgeInsets.only(
+                      left: defaultPadding,
+                      right: defaultPadding,
+                      bottom: defaultPadding,
+                    ),
                     child: Text(_mockDetailDescription)),
               ],
             ),
