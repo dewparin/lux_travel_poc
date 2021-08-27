@@ -2,7 +2,12 @@
 
 Luxury Travel POC
 
+iOS
+
 ![iOS](https://github.com/dewparin/lux_travel_poc/blob/feature/readme/screenshot_ios.png?raw=true)
+
+Android
+
 ![Android](https://github.com/dewparin/lux_travel_poc/blob/feature/readme/screenshot_android.png?raw=true)
 
 
