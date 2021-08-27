@@ -7,7 +7,7 @@ import 'package:provider/provider.dart';
 
 /// OfferItem functions.
 ///
-/// Set favorite/unfavorite offer when tapped on favorite icon automatically via OfferModel.
+/// Set favorite/unfavorite offer when tapped on favorite icon automatically using OfferModel.
 /// Navigates to OfferDetailScreen when tapped on OfferItem.
 
 class OfferItem extends StatelessWidget {
