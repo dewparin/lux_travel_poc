@@ -10,10 +10,6 @@ class OfferList extends StatelessWidget {
 
   const OfferList({Key? key, this.onlyFavorites = false}) : super(key: key);
 
-  void _toggleFavorite(BuildContext context, int offerUid) {
-    Provider.of<OfferModel>(context, listen: false).toggleFavorite(offerUid);
-  }
-
   @override
   Widget build(BuildContext context) {
     return Consumer<OfferModel>(
@@ -32,11 +28,12 @@ class OfferList extends StatelessWidget {
 
   ListView _buildListView(List<Offer> offers) => ListView.builder(
         itemCount: offers.length,
-        itemBuilder: (context, index) => OfferItem(
-          offer: offers[index],
-          onTappedFavorite: (offerUid) {
-            _toggleFavorite(context, offerUid);
-          },
+        itemBuilder: (context, index) => Card(
+          margin: EdgeInsets.only(bottom: defaultPadding),
+          child: OfferItem(
+            offerUid: offers[index].uid,
+            allowNavigateToDetailScreen: true,
+          ),
         ),
       );
 

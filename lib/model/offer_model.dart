@@ -73,4 +73,7 @@ class OfferModel extends ChangeNotifier {
     _offers[index] = _offers[index].copyWithInverseFavorite();
     notifyListeners();
   }
+
+  Offer getOfferByUid(int uid) =>
+      _offers.firstWhere((offer) => offer.uid == uid);
 }
