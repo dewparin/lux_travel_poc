@@ -4,11 +4,11 @@ Luxury Travel POC
 
 iOS
 
-![iOS](https://github.com/dewparin/lux_travel_poc/blob/feature/readme/screenshot_ios.png?raw=true)
+![iOS](https://github.com/dewparin/lux_travel_poc/blob/main/screenshot_ios.png?raw=true)
 
 Android
 
-![Android](https://github.com/dewparin/lux_travel_poc/blob/feature/readme/screenshot_android.png?raw=true)
+![Android](https://github.com/dewparin/lux_travel_poc/blob/main/screenshot_android.png?raw=true)
 
 
 Image assets inside the app are from Unsplash.
