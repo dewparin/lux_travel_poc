@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:lux_travel_poc/presentation/components/offer_list.dart';
 
 class HomeScreen extends StatefulWidget {
+  const HomeScreen({Key? key}) : super(key: key);
+
   @override
   State<StatefulWidget> createState() => _State();
 }
@@ -9,8 +11,8 @@ class HomeScreen extends StatefulWidget {
 class _State extends State<HomeScreen> {
   int _selectedIndex = 0;
   final List<Widget> _widgetOptions = <Widget>[
-    OfferList(),
-    OfferList(
+    const OfferList(),
+    const OfferList(
       onlyFavorites: true,
     ),
   ];
@@ -36,7 +38,7 @@ class _State extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Lux'),
+        title: const Text('Lux'),
       ),
       body: IndexedStack(
         children: _widgetOptions,
@@ -45,7 +47,7 @@ class _State extends State<HomeScreen> {
       bottomNavigationBar: BottomNavigationBar(
         items: _bottomNavItems,
         currentIndex: _selectedIndex,
-        selectedItemColor: Theme.of(context).accentColor,
+        selectedItemColor: Theme.of(context).colorScheme.secondary,
         unselectedItemColor: Colors.white60,
         backgroundColor: Theme.of(context).primaryColor,
         onTap: _onItemTapped,

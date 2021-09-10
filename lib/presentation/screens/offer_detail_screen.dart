@@ -52,6 +52,8 @@ class OfferDetailScreenArguments {
 }
 
 class OfferDetailScreen extends StatelessWidget {
+  const OfferDetailScreen({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     final args = ModalRoute.of(context)!.settings.arguments
@@ -71,12 +73,12 @@ class OfferDetailScreen extends StatelessWidget {
                   offerUid: offer.uid,
                 ),
                 Container(
-                    padding: EdgeInsets.only(
+                    padding: const EdgeInsets.only(
                       left: defaultPadding,
                       right: defaultPadding,
                       bottom: defaultPadding,
                     ),
-                    child: Text(_mockDetailDescription)),
+                    child: const Text(_mockDetailDescription)),
               ],
             ),
           ),

@@ -19,13 +19,13 @@ class Offer {
 
   Offer copyWithInverseFavorite() {
     return Offer(
-      uid: this.uid,
-      imageUri: this.imageUri,
-      location: this.location,
-      title: this.title,
-      accommodationName: this.accommodationName,
-      priceDetail: this.priceDetail,
-      isFavorite: !this.isFavorite,
+      uid: uid,
+      imageUri: imageUri,
+      location: location,
+      title: title,
+      accommodationName: accommodationName,
+      priceDetail: priceDetail,
+      isFavorite: !isFavorite,
     );
   }
 }

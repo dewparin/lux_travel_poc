@@ -17,7 +17,7 @@ class OfferList extends StatelessWidget {
         final offers = onlyFavorites
             ? model.allOffers.where((offer) => offer.isFavorite).toList()
             : model.allOffers;
-        if (offers.length > 0) {
+        if (offers.isNotEmpty) {
           return _buildListView(offers);
         } else {
           return Center(child: _buildEmptyView(context));
@@ -29,7 +29,7 @@ class OfferList extends StatelessWidget {
   ListView _buildListView(List<Offer> offers) => ListView.builder(
         itemCount: offers.length,
         itemBuilder: (context, index) => Card(
-          margin: EdgeInsets.only(bottom: defaultPadding),
+          margin: const EdgeInsets.only(bottom: defaultPadding),
           child: OfferItem(
             offerUid: offers[index].uid,
             allowNavigateToDetailScreen: true,
@@ -51,7 +51,7 @@ class OfferList extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Icon(iconData),
-        SizedBox(
+        const SizedBox(
           width: smallPadding,
         ),
         Text(message),
