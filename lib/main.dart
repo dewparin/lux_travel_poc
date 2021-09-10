@@ -9,7 +9,7 @@ void main() {
       providers: [
         ChangeNotifierProvider(create: (_) => OfferModel())
       ],
-      child: LuxTravelApp(),
+      child: const LuxTravelApp(),
     ),
   );
 }

@@ -52,7 +52,7 @@ class OfferItem extends StatelessWidget {
                   fit: BoxFit.cover,
                 )),
             Container(
-              padding: EdgeInsets.fromLTRB(
+              padding: const EdgeInsets.fromLTRB(
                 defaultPadding,
                 smallPadding,
                 defaultPadding,
@@ -76,14 +76,14 @@ class OfferItem extends StatelessWidget {
             overflow: TextOverflow.ellipsis,
             style: Theme.of(context).textTheme.headline6,
           ),
-          SizedBox(
+          const SizedBox(
             height: smallPadding,
           ),
           Text(
             offer.accommodationName,
             style: Theme.of(context).textTheme.bodyText2,
           ),
-          SizedBox(
+          const SizedBox(
             height: mediumPadding,
           ),
           Text(
@@ -101,13 +101,13 @@ class OfferItem extends StatelessWidget {
       ListTile(
         dense: true,
         contentPadding: EdgeInsets.zero,
-        leading: Icon(Icons.location_pin),
+        leading: const Icon(Icons.location_pin),
         title: Align(
-          child: new Text(
+          child: Text(
             offer.location,
             style: Theme.of(context).textTheme.bodyText2,
           ),
-          alignment: Alignment(-1.3, 0),
+          alignment: const Alignment(-1.3, 0),
         ),
         trailing: IconButton(
           icon: offer.isFavorite
